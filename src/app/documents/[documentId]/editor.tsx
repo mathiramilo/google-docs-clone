@@ -90,22 +90,7 @@ export const Editor = () => {
       TableHeader,
       TableRow,
     ],
-    content: `
-      <table>
-          <tbody>
-            <tr>
-              <th>Name</th>
-              <th colspan="3">Description</th>
-            </tr>
-            <tr>
-              <td>John Stones</td>
-              <td>Singer</td>
-              <td>Songwriter</td>
-              <td>Actress</td>
-            </tr>
-          </tbody>
-        </table>
-    `,
+    content: "",
   });
 
   return (
