@@ -1,7 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { Id } from "../../convex/_generated/dataModel";
+import { toast } from "sonner";
+import { useMutation } from "convex/react";
+
 import {
   Dialog,
   DialogContent,
@@ -11,10 +13,11 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "./ui/dialog";
-import { useMutation } from "convex/react";
-import { api } from "../../convex/_generated/api";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
+
+import { api } from "../../convex/_generated/api";
+import { Id } from "../../convex/_generated/dataModel";
 
 interface RenameDialogProps {
   documentId: Id<"documents">;
@@ -38,9 +41,11 @@ export const RenameDialog = ({
     setIsUpdating(true);
 
     update({ id: documentId, title: title.trim() || "Untitled" })
-      .then(() => setOpen(false))
+      .then(() => toast.success("Document renamed"))
+      .catch(() => toast.error("Something went wrong"))
       .finally(() => {
         setIsUpdating(false);
+        setOpen(false);
       });
   };
 
