@@ -3,7 +3,10 @@
   "ignorePaths": [],
   "dictionaryDefinitions": [],
   "dictionaries": [],
-  "words": ["nuqs"],
+  "words": [
+    "googledocs",
+    "nuqs"
+  ],
   "ignoreWords": [],
   "import": []
 }
