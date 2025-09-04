@@ -182,7 +182,7 @@ body {
   }
 
   /* Task list specific styles */
-  ul[data-type='taskList'] {
+  ul[data-type="taskList"] {
     list-style: none;
     margin-left: 0;
     padding: 0;
@@ -202,11 +202,11 @@ body {
       }
     }
 
-    input[type='checkbox'] {
+    input[type="checkbox"] {
       cursor: pointer;
     }
 
-    ul[data-type='taskList'] {
+    ul[data-type="taskList"] {
       margin: 0;
     }
   }
@@ -241,7 +241,7 @@ body {
 
     .selectedCell:after {
       background: #949494;
-      content: '';
+      content: "";
       left: 0;
       right: 0;
       top: 0;
@@ -270,5 +270,29 @@ body {
   &.resize-cursor {
     cursor: ew-resize;
     cursor: col-resize;
+  }
+}
+
+/* For mobile */
+.floating-threads {
+  display: none;
+}
+
+/* For desktop */
+.anchored-threads {
+  display: block;
+  max-width: 300px;
+  width: 100%;
+  position: absolute;
+  right: 12px;
+}
+
+@media (max-width: 640px) {
+  .floating-threads {
+    display: block;
+  }
+
+  .anchored-threads {
+    display: none;
   }
 }
